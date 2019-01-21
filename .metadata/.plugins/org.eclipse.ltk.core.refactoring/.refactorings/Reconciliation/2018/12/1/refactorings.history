@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Filereader.java&apos; to &apos;Reconciliation/src/dbconnection&apos;&#x0D;&#x0A;- Original project: &apos;Reconciliation&apos;&#x0D;&#x0A;- Destination element: &apos;Reconciliation/src/dbconnection&apos;&#x0D;&#x0A;- Original element: &apos;myapp.Filereader.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;dbconnection" element1="/src&lt;myapp{Filereader.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1546248903269" units="1" version="1.0"/>
+</session>

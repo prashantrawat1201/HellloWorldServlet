@@ -1,0 +1,63 @@
+package dbconnection;
+import java.io.BufferedReader;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.sql.ResultSet;
+
+import com.mysql.jdbc.PreparedStatement;
+public static void main(String args[]) throws IOException
+
+	 Connection con=null;
+	 
+	 //registering the driver
+	 
+	 try {
+		Class.forName("com.mysql.jdbc.Driver");
+	
+		//creating a connection to the database
+		
+		con=DriverManager.getConnection("jdbc:mysql://localhost//:3306","root","root");
+		
+ {
+	final String COMMA_DELIMITER = ",";
+	int i,j;
+
+BufferedReader br=new BufferedReader(new FileReader("C:\\Reconciliation_Data/challan_LDA.csv"));
+
+String line=null;
+ while ((line = br.readLine()) != null) 
+ {
+	 // System.out.println(line);
+ String[] challan=line.split(COMMA_DELIMITER);
+ if(challan.length>0) {
+
+//Query execution
+		 PreparedStatement stmt= con.prepareStatement("Insert into Bank_book values=(?,?,?,?,?,?,?,?)");
+		stmt.setString(1, challan[0]);
+		stmt.setString(2, challan[1]);
+		stmt.setString(3, challan[4]);
+		stmt.setString(4, challan[5]);
+		stmt.setString(5, challan[6]);
+		stmt.setString(6, challan[15]);
+		stmt.setString(7, challan[17]);
+		stmt.setString(8, challan[18]);
+		 ResultSet rs=stmt.executeQuery();
+			//while(rs.next())
+				//System.out.println(rs.getString(1));
+			 
+			
+			//closing the connection
+		
+			con.close();
+	} catch (Exception e) {
+	
+		// TODO Auto-generated catch block
+		
+		e.printStackTrace();
+	}
+
+public class filereader2 {
+
+}
